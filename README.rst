@@ -25,7 +25,7 @@ For contact and support information, see `SUPPORT.rst <SUPPORT.rst>`_.
 Changes and Instructions
 ########################
 
-We are currently using v0.7.4 of DeepSpeech with a modified scorer which includes vocabulary unique to Carnegie Mellon. 
+We are currently using v0.7.4 of DeepSpeech with a modified scorer which includes vocabulary unique to Carnegie Mellon. All the instructions below assume you are running this code on the TBD_Engine.
 
 Before doing anything you must install the correct dependencies after cloning the repo as follows as follows:
 
@@ -59,6 +59,14 @@ We then removed the KenLM source install from ``native_client``, installed it di
    make j -4
    
 Then we built the scorer according to instructions on `the DeepSpeech docs <https://deepspeech.readthedocs.io/en/v0.7.4/Scorer.html>`_. To modify this scorer you need to modify ``librispeech-lm-norm.txt`` located in the ``langage-model-files`` folder on the TBD_Engine and follow the instructions on the above link. Make sure to save the scorer to ``data/lm``.
+
+If you would like to test to scorer on phrases you can run the python file in ``util/kenlm_test``, but first you must install the kenlm dependencies:
+
+.. code-block:: bash
+   
+   pip install https://github.com/kpu/kenlm/archive/master.zip
+   
+The uses the binary file stored in ``/media/data/deepspeech-training/language-model-files``.
 
 To train the model from a checkpoint you can either use the original checkpoint from v0.7.4 stored on the TBD_Engine @ ``/media/data/deepspeech-training/deepspeech-0.7.4-checkpoint`` or our current checkpoint @ ``/media/data/deepspeech-training/checkpoints``. Your training data must be in wav format and also have a csv with each row containing wav_filename, wav_filesize, and wav_transcript. An example of how this should look is in ``/media/data/deepspeech-training/training-data``
 
