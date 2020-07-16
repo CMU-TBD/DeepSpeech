@@ -34,3 +34,11 @@
 /doc/xml-java/
 Dockerfile.build
 Dockerfile.train
+/venv
+/data/testData
+/checkpoints
+/data/lm/librispeech-lm-norm.txt
+/data/lm/lm.binary
+/data/lm/vocab-800000.txt
+/deepspeech-0.7.4-checkpoint
+deepspeech-0.7.4-checkpoint.tar.gz

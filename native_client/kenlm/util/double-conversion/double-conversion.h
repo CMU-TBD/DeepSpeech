@@ -30,7 +30,7 @@
 
 #include "utils.h"
 
-namespace kenlm_double_conversion {
+namespace double_conversion {
 
 class DoubleToStringConverter {
  public:
@@ -538,6 +538,6 @@ class StringToDoubleConverter {
   DISALLOW_IMPLICIT_CONSTRUCTORS(StringToDoubleConverter);
 };
 
-}  // namespace kenlm_double_conversion
+}  // namespace double_conversion
 
 #endif  // DOUBLE_CONVERSION_DOUBLE_CONVERSION_H_

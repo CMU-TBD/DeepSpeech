@@ -61,7 +61,7 @@ FilePiece::FilePiece(int fd, const char *name, std::ostream *show_progress, std:
   Initialize(NamePossiblyFind(fd, name).c_str(), show_progress, min_buffer);
 }
 
-FilePiece::FilePiece(std::istream &stream, const char *name, std::size_t min_buffer) :
+FilePiece::FilePiece(std::istream &stream, const char * /*name*/, std::size_t min_buffer) :
   total_size_(kBadSize) {
   InitializeNoRead("istream", min_buffer);
 
@@ -162,8 +162,8 @@ void FilePiece::Initialize(const char *name, std::ostream *show_progress, std::s
 
 namespace {
 
-static const kenlm_double_conversion::StringToDoubleConverter kConverter(
-    kenlm_double_conversion::StringToDoubleConverter::ALLOW_TRAILING_JUNK | kenlm_double_conversion::StringToDoubleConverter::ALLOW_LEADING_SPACES,
+static const double_conversion::StringToDoubleConverter kConverter(
+    double_conversion::StringToDoubleConverter::ALLOW_TRAILING_JUNK | double_conversion::StringToDoubleConverter::ALLOW_LEADING_SPACES,
     std::numeric_limits<double>::quiet_NaN(),
     std::numeric_limits<double>::quiet_NaN(),
     "inf",

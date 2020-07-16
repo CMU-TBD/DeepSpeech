@@ -37,7 +37,7 @@
 #include "strtod.h"
 #include "utils.h"
 
-namespace kenlm_double_conversion {
+namespace double_conversion {
 
 const DoubleToStringConverter& DoubleToStringConverter::EcmaScriptConverter() {
   int flags = UNIQUE_ZERO | EMIT_POSITIVE_EXPONENT_SIGN;
@@ -979,4 +979,4 @@ float StringToDoubleConverter::StringToFloat(
                                          processed_characters_count));
 }
 
-}  // namespace kenlm_double_conversion
+}  // namespace double_conversion

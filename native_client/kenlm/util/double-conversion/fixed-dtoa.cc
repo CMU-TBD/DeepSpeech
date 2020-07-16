@@ -30,7 +30,7 @@
 #include "fixed-dtoa.h"
 #include "ieee.h"
 
-namespace kenlm_double_conversion {
+namespace double_conversion {
 
 // Represents a 128bit type. This class should be replaced by a native type on
 // platforms that support 128bit integers.
@@ -402,4 +402,4 @@ bool FastFixedDtoa(double v,
   return true;
 }
 
-}  // namespace kenlm_double_conversion
+}  // namespace double_conversion
